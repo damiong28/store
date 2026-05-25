@@ -28,7 +28,12 @@
     <div class="alert"><%= flash[:alert] %></div>
     <nav>
       <%= link_to "Home", root_path %>
-      <%= button_to "Log out", session_path, method: :delete if authenticated? %>
+      <% if authenticated? %>
+        <%= button_to "Log out", session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign Up", sign_up_path %>
+        <%= link_to "Login", new_session_path %>
+      <% end %>
     </nav>
     <%= yield %>
   </body>
