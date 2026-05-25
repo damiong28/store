@@ -22,5 +22,4 @@ class SignUpsControllerTest < ActionDispatch::IntegrationTest
     assert_select "h1", "Sign Up"
     assert_nil cookies[:session_id]
   end
-
 end
